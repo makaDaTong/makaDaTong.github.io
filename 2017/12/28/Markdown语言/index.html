@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Markdown," />
 
 
 
@@ -80,14 +80,15 @@
 
 
 <meta name="description" content="1.标题 标题加1个#号是一级标题，加2个#是二级标题依此类推 # 一级标题 ## 二级标题   2.斜体和粗体 将需要设置为斜体的文字两端使用1个“*”或者“_”夹起来 例如:_88_ 显示为 88 将需要设置为粗体的文字两端使用2个“_”夹起来 例如: __粗体__ 显示为 粗体   3.引用 行首使用 &amp;gt; 加上一个空格表示引用一个段落，可嵌套例:&amp;gt; 引用 &amp;gt;&amp;gt;我再引用 引用  我">
+<meta name="keywords" content="Markdown">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Markdown语言怎么用">
 <meta property="og:url" content="http://yoursite.com/2017/12/28/Markdown语言/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Merry">
 <meta property="og:description" content="1.标题 标题加1个#号是一级标题，加2个#是二级标题依此类推 # 一级标题 ## 二级标题   2.斜体和粗体 将需要设置为斜体的文字两端使用1个“*”或者“_”夹起来 例如:_88_ 显示为 88 将需要设置为粗体的文字两端使用2个“_”夹起来 例如: __粗体__ 显示为 粗体   3.引用 行首使用 &amp;gt; 加上一个空格表示引用一个段落，可嵌套例:&amp;gt; 引用 &amp;gt;&amp;gt;我再引用 引用  我">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://assets.servedby-buysellads.com/p/manage/asset/id/38523">
-<meta property="og:updated_time" content="2017-12-29T08:42:13.721Z">
+<meta property="og:updated_time" content="2017-12-29T09:20:59.108Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Markdown语言怎么用">
 <meta name="twitter:description" content="1.标题 标题加1个#号是一级标题，加2个#是二级标题依此类推 # 一级标题 ## 二级标题   2.斜体和粗体 将需要设置为斜体的文字两端使用1个“*”或者“_”夹起来 例如:_88_ 显示为 88 将需要设置为粗体的文字两端使用2个“_”夹起来 例如: __粗体__ 显示为 粗体   3.引用 行首使用 &amp;gt; 加上一个空格表示引用一个段落，可嵌套例:&amp;gt; 引用 &amp;gt;&amp;gt;我再引用 引用  我">
@@ -127,7 +128,7 @@
 
 
 
-  <title>Markdown语言怎么用 | Hexo</title>
+  <title>Markdown语言怎么用 | Merry</title>
   
 
 
@@ -157,7 +158,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">Merry</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -188,6 +189,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
           </a>
         </li>
       
@@ -243,7 +254,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="Merry">
     </span>
 
     
@@ -273,6 +284,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编写/" itemprop="url" rel="index">
+                    <span itemprop="name">编写</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -353,9 +386,12 @@
 </blockquote>
 </li>
 </ol>
-<p>　
-　　</p>
-
+<!-- 文本居中的引用 -->
+<!--<blockquote class="blockquote-center">blah blah blah</blockquote> -->
+<!-- 突破容器宽度限制的图片　　 -->
+<!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 -->
+<!-- 其中 class="full-image" 是必须的 -->
+<!-- <img src="/image-url" class="full-image" /> -->
       
     </div>
     
@@ -369,6 +405,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Markdown/" rel="tag"># Markdown</a>
+          
+        </div>
       
 
       
@@ -475,7 +517,25 @@
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
             
 
           </nav>
