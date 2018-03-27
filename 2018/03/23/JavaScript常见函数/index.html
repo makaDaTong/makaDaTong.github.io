@@ -79,16 +79,17 @@
 
 
 
-<meta name="description" content="I exist because you need me.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Merry">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="1.数组扁平化 数组扁平化的方法有很多，但最好用的还是递归 123456789101112131415function flattenDepth(array, depth = 1) &amp;#123;      let result = []        array.forEach(item =&amp;gt;&amp;#123;            let d = depth            if (Arr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript常见函数">
+<meta property="og:url" content="http://yoursite.com/2018/03/23/JavaScript常见函数/index.html">
 <meta property="og:site_name" content="Merry">
-<meta property="og:description" content="I exist because you need me.">
+<meta property="og:description" content="1.数组扁平化 数组扁平化的方法有很多，但最好用的还是递归 123456789101112131415function flattenDepth(array, depth = 1) &amp;#123;      let result = []        array.forEach(item =&amp;gt;&amp;#123;            let d = depth            if (Arr">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-27T05:44:24.698Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Merry">
-<meta name="twitter:description" content="I exist because you need me.">
+<meta name="twitter:title" content="JavaScript常见函数">
+<meta name="twitter:description" content="1.数组扁平化 数组扁平化的方法有很多，但最好用的还是递归 123456789101112131415function flattenDepth(array, depth = 1) &amp;#123;      let result = []        array.forEach(item =&amp;gt;&amp;#123;            let d = depth            if (Arr">
 
 
 
@@ -118,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/23/JavaScript常见函数/"/>
 
 
 
 
 
-  <title>Merry</title>
+  <title>JavaScript常见函数 | Merry</title>
   
 
 
@@ -143,8 +144,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -227,9 +227,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -259,9 +259,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/23/JavaScript常见函数/" itemprop="url">JavaScript常见函数</a></h1>
+          <h1 class="post-title" itemprop="name headline">JavaScript常见函数</h1>
         
 
         <div class="post-meta">
@@ -311,9 +309,7 @@
       
 
       
-        
-          
-            <h2 id="1-数组扁平化"><a href="#1-数组扁平化" class="headerlink" title="1.数组扁平化"></a>1.数组扁平化</h2><pre><code> 数组扁平化的方法有很多，但最好用的还是递归
+        <h2 id="1-数组扁平化"><a href="#1-数组扁平化" class="headerlink" title="1.数组扁平化"></a>1.数组扁平化</h2><pre><code> 数组扁平化的方法有很多，但最好用的还是递归
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function flattenDepth(array, depth = 1) &#123;</span><br><span class="line">      let result = []</span><br><span class="line">        array.forEach(item =&gt;&#123;</span><br><span class="line">            let d = depth</span><br><span class="line">            if (Array.isArray(item) &amp;&amp; d &gt; 0) &#123;</span><br><span class="line">               result.push(...(flattenDepth(item, --d)))</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">               result.push(item)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">       return result</span><br><span class="line">&#125;</span><br><span class="line">console.log(flattenDepth([1, [2, [3, [4]], 5]])) // [ 1, 2, [ 3, [ 4 ] ], 5 ]</span><br><span class="line">console.log(flattenDepth([1, [2, [3, [4]], 5]], 2)) // [ 1, 2, 3, [ 4 ], 5 ]</span><br><span class="line">console.log(flattenDepth([1, [2, [3, [4]], 5]], 3)) // [ 1, 2, 3, 4, 5 ]</span><br></pre></td></tr></table></figure>
 </code></pre><p>   递归的实现很简单，就是遍历每一项，如果每一项未数组，就让它继续调用这个函数，这里指定了depth为扁平化的深度</p>
 <h2 id="2-柯里化"><a href="#2-柯里化" class="headerlink" title="2.柯里化"></a>2.柯里化</h2><pre><code>根据定义来说，柯里化就是将一个接收“多个”参数的函数拆分成一个或者许多个接收“单一”参数的函数。定义看起来是比较抽象的
@@ -324,8 +320,6 @@
 <h3 id="1-通过递归解决"><a href="#1-通过递归解决" class="headerlink" title="(1)通过递归解决"></a>(1)通过递归解决</h3>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"> var china = &#123;</span><br><span class="line">     nation : &apos;中国&apos;,</span><br><span class="line">     birthplaces:[&apos;北京&apos;,&apos;上海&apos;,&apos;广州&apos;],</span><br><span class="line">     skincolr :&apos;yellow&apos;,</span><br><span class="line">     friends:[&apos;sk&apos;,&apos;ls&apos;]</span><br><span class="line">    &#125;</span><br><span class="line">   </span><br><span class="line"> function deepCopy(o,c)&#123;</span><br><span class="line">     var c = c || &#123;&#125;</span><br><span class="line">     for(var i in o)&#123;</span><br><span class="line">         if(typeof o[i] === &apos;object&apos;)&#123;</span><br><span class="line">                 //要考虑深复制问题了</span><br><span class="line">                     if(o[i].constructor === Array)&#123;</span><br><span class="line">                         //这是数组</span><br><span class="line">                         c[i] =[]</span><br><span class="line">                     &#125;else&#123;</span><br><span class="line">                         //这是对象</span><br><span class="line">                         c[i] = &#123;&#125;</span><br><span class="line">                     &#125;</span><br><span class="line">                     deepCopy(o[i],c[i])</span><br><span class="line">         &#125;else&#123;</span><br><span class="line">             c[i] = o[i]</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line">     return c</span><br><span class="line"> &#125;</span><br><span class="line">var result = &#123;name:&apos;result&apos;&#125;</span><br><span class="line">result = deepCopy(china,result)</span><br><span class="line">console.dir(result)</span><br></pre></td></tr></table></figure>
 </blockquote>
 <h3 id="2-最简单的深拷贝-b-JSON-parse-JSON-stringify-a"><a href="#2-最简单的深拷贝-b-JSON-parse-JSON-stringify-a" class="headerlink" title="(2)最简单的深拷贝  b = JSON.parse( JSON.stringify(a) )"></a>(2)最简单的深拷贝  <strong>b = JSON.parse( JSON.stringify(a) )</strong></h3>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var test =&#123;</span><br><span class="line">	name:&#123;</span><br><span class="line">	   xing:&#123; </span><br><span class="line">	     first:&apos;张&apos;,</span><br><span class="line">	     second:&apos;李&apos;</span><br><span class="line">	   &#125;,</span><br><span class="line">	   ming:&apos;老头&apos;</span><br><span class="line">  &#125;,</span><br><span class="line">  age :40,</span><br><span class="line">  friend :[&apos;葫芦娃&apos;,&apos;唐老鸭&apos;,&apos;贝贝&apos;]</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line">   var result = JSON.parse(JSON.stringify(test))</span><br><span class="line">result.age = 30</span><br><span class="line">result.name.xing.first = &apos;cc&apos;</span><br><span class="line">result.friend.push(&apos;郭德纲;李华&apos;)</span><br><span class="line">console.dir(test)</span><br><span class="line">console.dir(result)</span><br></pre></td></tr></table></figure>
-          
-        
       
     </div>
     
@@ -342,468 +336,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/26/HTTP工作原理/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Merry">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Merry">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/26/HTTP工作原理/" itemprop="url">HTTP工作原理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-26T16:28:47+08:00">
-                2018-02-26
-              </time>
+              <a href="/2018/02/26/HTTP工作原理/" rel="next" title="HTTP工作原理">
+                <i class="fa fa-chevron-left"></i> HTTP工作原理
+              </a>
             
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>HTTP协议定义Web客户端如何从Web服务器请求Web页面，以及服务器如何把Web页面传送给客户端。HTTP协议采用了请求/响应模型。客户端向服务器发送一个请求报文，请求报文包含请求的方法、URL、协议版本、请求头部和请求数据。服务器以一个状态行作为响应，响应的内容包括协议的版本、成功或者错误代码、服务器信息、响应头部和响应数据。</p>
-<h2 id="1-客户端连接到Web服务器"><a href="#1-客户端连接到Web服务器" class="headerlink" title="1.客户端连接到Web服务器"></a>1.客户端连接到Web服务器</h2><p>一个HTTP客户端，通常是浏览器，与Web服务器的HTTP端口（默认为80）建立一个TCP套接字连接。例如，<a href="http://www.baidu.com。" target="_blank" rel="noopener">http://www.baidu.com。</a></p>
-<h2 id="2-发送HTTP请求"><a href="#2-发送HTTP请求" class="headerlink" title="2.发送HTTP请求"></a>2.发送HTTP请求</h2><p>通过TCP套接字，客户端向Web服务器发送一个文本的请求报文，一个请求报文由请求行、请求头部、空行和请求数据4部分组成。</p>
-<h2 id="3-服务器接受请求并返回HTTP响应"><a href="#3-服务器接受请求并返回HTTP响应" class="headerlink" title="3.服务器接受请求并返回HTTP响应"></a>3.服务器接受请求并返回HTTP响应</h2><p>Web服务器解析请求，定位请求资源。服务器将资源复本写到TCP套接字，由客户端读取。一个响应由状态行、响应头部、空行和响应数据4部分组成。</p>
-<h2 id="4-释放连接TCP连接"><a href="#4-释放连接TCP连接" class="headerlink" title="4.释放连接TCP连接"></a>4.释放连接TCP连接</h2><p>若connection 模式为close，则服务器主动关闭TCP连接，客户端被动关闭连接，释放TCP连接;若connection 模式为keepalive，则该连接会保持一段时间，在该时间内可以继续接收请求。</p>
-<h2 id="5-客户端浏览器解析HTML内容"><a href="#5-客户端浏览器解析HTML内容" class="headerlink" title="5.客户端浏览器解析HTML内容"></a>5.客户端浏览器解析HTML内容</h2><p>客户端浏览器首先解析状态行，查看表明请求是否成功的状态代码。然后解析每一个响应头，响应头告知以下为若干字节的HTML文档和文档的字符集。客户端浏览器读取响应数据HTML，根据HTML的语法对其进行格式化，并在浏览器窗口中显示。</p>
-<p>例如：在浏览器地址栏键入URL，按下回车之后会经历以下流程：</p>
-<blockquote>
-<p>1、浏览器向 DNS 服务器请求解析该 URL 中的域名所对应的 IP 地址;</p>
-<p>2、解析出 IP 地址后，根据该 IP 地址和默认端口 80，和服务器建立TCP连接;</p>
-<p>3、浏览器发出读取文件(URL 中域名后面部分对应的文件)的HTTP 请求，该请求报文作为 TCP 三次握手的第三个报文的数据发送给服务器;</p>
-<p>4、服务器对浏览器请求作出响应，并把对应的 html 文本发送给浏览器;</p>
-<p>5、释放 TCP连接;</p>
-<p>6、浏览器将该 html 文本并显示内容; 　</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/28/Markdown语言/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Merry">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Merry">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/28/Markdown语言/" itemprop="url">Markdown语言怎么用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-28T13:30:52+08:00">
-                2017-12-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编写/" itemprop="url" rel="index">
-                    <span itemprop="name">编写</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h1><ul>
-<li>标题加1个#号是一级标题，加2个#是二级标题依此类推</li>
-<li><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="# 一级标题"></a># 一级标题</h1></li>
-<li><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="## 二级标题"></a>## 二级标题</h2></li>
-</ul>
-<hr>
-<h1 id="2-斜体和粗体"><a href="#2-斜体和粗体" class="headerlink" title="2.斜体和粗体"></a>2.斜体和粗体</h1><ul>
-<li>将需要设置为斜体的文字两端使用1个“*”或者“_”夹起来 例如:_88_ 显示为 <em>88</em></li>
-<li>将需要设置为粗体的文字两端使用2个“_”夹起来 例如: <code>__粗体__</code> 显示为 <strong>粗体</strong></li>
-</ul>
-<hr>
-<h1 id="3-引用"><a href="#3-引用" class="headerlink" title="3.引用"></a>3.引用</h1><ul>
-<li>行首使用 &gt; 加上一个空格表示引用一个段落，可嵌套<br>例:> 引用 >&gt;我再引用<blockquote>
-<p>引用</p>
-<blockquote>
-<p>我再引用</p>
-</blockquote>
-</blockquote>
-</li>
-</ul>
-<hr>
-<h1 id="4-分割线"><a href="#4-分割线" class="headerlink" title="4.分割线"></a>4.分割线</h1><ul>
-<li>在一行连续使用三个或以上_或*:<br>例：-–</li>
-</ul>
-<hr>
-<h1 id="5-代码区块"><a href="#5-代码区块" class="headerlink" title="5.代码区块"></a>5.代码区块</h1><ul>
-<li>使用 三个“```”来展示代码片段<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fn(aa)&#123;</span><br><span class="line">   console.log(aa)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<h1 id="6-链接和图片"><a href="#6-链接和图片" class="headerlink" title="6.链接和图片"></a>6.链接和图片</h1><ol>
-<li>普通链接 例如:[百度](<a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a>)<br><a href="https://www.baidu.com" target="_blank" rel="noopener">百度</a> </li>
-<li>图像链接 例如:![](<a href="https://assets.servedby-buysellads.com/p/manage/asset/id/38523" target="_blank" rel="noopener">https://assets.servedby-buysellads.com/p/manage/asset/id/38523</a>)<br><img src="https://assets.servedby-buysellads.com/p/manage/asset/id/38523" alt="图像"></li>
-</ol>
-<h1 id="7-无序列表和有序列表"><a href="#7-无序列表和有序列表" class="headerlink" title="7.无序列表和有序列表"></a>7.无序列表和有序列表</h1><ol>
-<li><p>在文字开头添加(“,”“ +”, 或 “-”)实现无序列表。但是要注意在(“,”“ +”, 或 “-”)和文字之间需要添加空格</p>
-<blockquote>
-<ul>
-<li>这是无序列表</li>
-<li>这是无序列表</li>
-</ul>
-</blockquote>
-</li>
-<li><p>使用数字后面跟上句号</p>
-<blockquote>
-<ol>
-<li>这是有序列表</li>
-<li>这是有序列表</li>
-</ol>
-</blockquote>
-</li>
-</ol>
-<!-- 文本居中的引用 -->
-<!--<blockquote class="blockquote-center">blah blah blah</blockquote> -->
-<!-- 突破容器宽度限制的图片　　 -->
-<!-- HTML方式: 直接在 Markdown 文件中编写 HTML 来调用 -->
-<!-- 其中 class="full-image" 是必须的 -->
-<!-- <img src="/image-url" class="full-image" /> -->
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/28/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Merry">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/head.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Merry">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/28/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-28T11:13:30+08:00">
-                2017-12-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/28/hello-world/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -813,10 +367,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -824,6 +379,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -844,8 +403,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -911,6 +479,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-数组扁平化"><span class="nav-number">1.</span> <span class="nav-text">1.数组扁平化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-柯里化"><span class="nav-number">2.</span> <span class="nav-text">2.柯里化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-对象拷贝"><span class="nav-number">3.</span> <span class="nav-text">3.对象拷贝</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-通过递归解决"><span class="nav-number">3.1.</span> <span class="nav-text">(1)通过递归解决</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-最简单的深拷贝-b-JSON-parse-JSON-stringify-a"><span class="nav-number">3.2.</span> <span class="nav-text">(2)最简单的深拷贝  b = JSON.parse( JSON.stringify(a) )</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1058,6 +642,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
